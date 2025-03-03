@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Akua</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f7ff 0%, #87CEEB 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            perspective: 1000px;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .main-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #4682B4;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-cards {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .section-card {
+            background: rgba(135, 206, 235, 0.2);
+            padding: 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            background: #4682B4;
+            color: white;
+        }
+
+        .expanded-section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            transform: translateX(100%) rotateY(-90deg);
+            transform-origin: left;
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        .section-card:hover + .expanded-section {
+            transform: translateX(0) rotateY(0);
+            opacity: 1;
+        }
+
+        .expanded-section:hover {
+            transform: translateX(0) rotateY(0);
+            opacity: 1;
+        }
+
+        .hobby-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .hobby {
+            background: rgba(135, 206, 235, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #4682B4;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hobby:hover {
+            background: #4682B4;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+            }
+
+            .expanded-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-card">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="images/A2.jpg" alt="Akua's Profile Picture">
+                </div>
+                <div>
+                    <h1>Hi, I'm Akua!</h1>
+                    <p style="color: #666;">First-year Computer Engineering student with a creative spirit and big dreams.</p>
+                </div>
+            </div>
+
+            <div class="section-cards">
+                <div class="section-card">🎓 Academic Journey</div>
+                <div class="expanded-section">
+                    <h2 style="color: #4682B4; margin-bottom: 1rem;">My Education Path</h2>
+                    <p>I'm currently a first-year Computer Engineering student, building on the foundation I gained at Wesley Girls Senior High School.</p>
+                    <p>The world of technology and engineering fascinates me, and I'm excited to be taking my first steps into this field.</p>
+                    <p>Every day brings new challenges and learning opportunities, and I'm here for all of it!</p>
+                </div>
+
+                <div class="section-card">✨ Hobbies & Interests</div>
+                <div class="expanded-section">
+                    <h2 style="color: #4682B4; margin-bottom: 1rem;">What I Love to Do</h2>
+                    <p>Life isn't all about coding and circuits! Here's what keeps me creative and energized:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: #666;">
+                        <li>Baking - Creating sweet treats and experimenting with recipes</li>
+                        <li>Crocheting - Crafting cozy creations one stitch at a time</li>
+                        <li>Dancing - Me expressing myself through rythmic movements</li>
+                        <li>Shenanigans - Always up for fun adventures and making memories!</li>
+                    </ul>
+                </div>
+
+                <div class="section-card">🌟 Future Aspirations</div>
+                <div class="expanded-section">
+                    <h2 style="color: #4682B4; margin-bottom: 1rem;">Where I'm Heading</h2>
+                    <p>I've got big dreams and I'm working hard to achieve them! My main goal? Making money and being financially independent baddie doing what I love .</p>
+                    <p>The beauty of computer engineering is that it opens so many doors:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; color: #666;">
+                        <li>Exploring innovative technologies</li>
+                        <li>Creating solutions that make a difference</li>
+                        <li>Building a successful career in tech</li>
+                    </ul>
+                    <p>Watch this space - I'm just getting started! 💫</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
